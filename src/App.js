@@ -31,10 +31,9 @@ function App() {
      */
     e.preventDefault();
     if (title === "" || body === "") return;
-    const todoId = new Date().getTime();
     const res = await dispatch(__addToDo());
     if (res) {
-      dispatch(addTodo({ id: todoId, title, body }));
+      dispatch(addTodo({ id: id, title, body }));
       resetInputs(); // 입력 값 초기화
     }
   };
